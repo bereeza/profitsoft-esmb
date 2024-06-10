@@ -42,6 +42,19 @@ services:
 
 ![req-res.png](img/req-res.png)
 
+А також додавання пісні:
+
+```http://localhost:1003/api/song```
+```json
+{
+    "title": "Turning Away",
+    "duration": 3.57,
+    "album": "Order in Decline",
+    "genre": "punk rock, alternative metal",
+    "artist_id": 2
+}
+```
+
 ## Тести
 
 ![tests.png](img/tests.png)
