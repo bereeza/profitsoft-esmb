@@ -39,7 +39,9 @@ services:
 ## Додатково
 
 Приклад роботи з 2 випадками:
+
 ![req-res.png](img/req-res.png)
 
 ## Тести
+
 ![tests.png](img/tests.png)
