@@ -28,7 +28,7 @@ public class MailServiceTest {
     private MailRepository mailRepository;
 
     @MockBean
-    private JavaMailSender mockJavaMailSender;
+    private JavaMailSender mailSender;
 
     @Test
     @DisplayName("Mail sent successfully")
@@ -50,11 +50,11 @@ public class MailServiceTest {
                 .status(mailSaveDto.getStatus())
                 .attempt(mailSaveDto.getAttempt())
                 .build();
-        doNothing().when(mockJavaMailSender).send(any(SimpleMailMessage.class));
+        doNothing().when(mailSender).send(any(SimpleMailMessage.class));
 
         mailService.saveMail(mailSaveDto);
 
-        verify(mockJavaMailSender, times(1))
+        verify(mailSender, times(1))
                 .send(any(SimpleMailMessage.class));
 
         verify(mailRepository, times(1))
@@ -74,11 +74,11 @@ public class MailServiceTest {
                 .build();
 
         doThrow(new MailSendException("Failed to send email"))
-                .when(mockJavaMailSender).send(any(SimpleMailMessage.class));
+                .when(mailSender).send(any(SimpleMailMessage.class));
 
         mailService.saveMail(mailSaveDto);
 
-        verify(mockJavaMailSender, times(1))
+        verify(mailSender, times(1))
                 .send(any(SimpleMailMessage.class));
 
         verify(mailRepository, times(1))

@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.jackson.Jacksonized;
 
 /**
- * Response used once, in MailController for the controller response.
+ * Response used once; in MailController for the controller response.
  */
 @Getter
 @Builder

@@ -21,7 +21,7 @@ public class MailService {
     // only my mail (admin)
     private final String[] TO = {"timofejberezanskij@gmail.com"};
 
-    // Use this @Annotation to follow the ACID rules
+    // For ACID rules
     @Transactional
     public Mail sendMail() {
         return Mail.builder()

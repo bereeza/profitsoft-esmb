@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * Scheduler for receiving mail that has an error status and needs to be resent.
- * Use pagination to avoid receiving all messages at once
+ * Use pagination.
  */
 @Component
 @RequiredArgsConstructor
